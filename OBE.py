@@ -1,22 +1,11 @@
-#!/usr/bin/env python
-# coding: utf-8
 
 # ### OBE with time dissipation
-# In this notebook we can play around with the evolution of Bloch vectors in the Bloch sphere. For this, the programme integrates numerically the OBE. Then we represent in an animation the Bloch sphere, the Bloch vector (orange), the evolution of populations (projection on the $s_3$ axis, in green) and the trajectory of the vector during the tive evolution (red).
+# In this notebook we can play around with the evolution of Bloch vectors in the Bloch sphere. For this, the programme integrates numerically the OBE. 
+# Then we represent in an animation the Bloch sphere, the Bloch vector (orange), the evolution of populations (projection on the $s_3$ axis, in green) 
+# and the trajectory of the vector during the tive evolution (red).
 # 
-# The variables we may want to change are:
-# 
-# Omega = $\Omega_1$
-# 
-# Delta = $\Delta$
-# 
-# gamma = $\gamma$
-# 
-# 
+# The variables we may want to change are: Rabi frequency (Omega), detuning (Delta) and the dissipation (gamma)
 # We also suppose that there are no collisions, that is $\Gamma = 2\gamma$. This can be easily changed. The initial state of the Bloch vector is denoted by the variable s0 that can also be changed.
-
-# In[2]:
-
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -106,15 +95,14 @@ animate = animation.FuncAnimation(fig, update_plot, nmax, fargs=(v, plot))
 #---------------------------------------------------------------------------------------------------
 # Saving. You can change the name of the file. 
 
-# To generate a gif we need to install imagemagick (free software). Then use the following line
+# To generate a gif we need to install imagemagick. Then use the following line
 animate.save('OBE.gif',writer='imagemagick')
 
 # If we don't want to download imagemagick then we can just generate a mp4 file
+
 #animate.save('OBE.mp4', writer = None)
 plt.show()
 
-
-# In[ ]:
 
 
 
